@@ -1,16 +1,19 @@
 import React from 'react';
 import View from './View';
-import { getUser } from '../utils/auth';
-import Projects from './Stats/projects';
+import TimerCard from './TopProfile/Timer/TimerCard';
+import ProjectsCard from './TopProfile/Projects/ProjectsCard';
+import EntryLog from './BottomProfile/Log/EntryLog';
 
 const Profile = () => {
-  const user = getUser();
-  const { displayName, email, emailVerified } = user;
-  const accessToken = user.stsTokenManager.accessToken;
-
   return (
     <View title='Your Profile'>
-      <Projects />
+      <section className='top-profile-container'>
+        <TimerCard />
+        <ProjectsCard />
+      </section>
+      <section className='bottom-profile-container'>
+        <EntryLog />
+      </section>
     </View>
   );
 };

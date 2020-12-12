@@ -1,1 +1,1 @@
-export const TEST_STORE = 'TEST_STORE';
+export const TEST_TYPE = 'TEST_TYPE';

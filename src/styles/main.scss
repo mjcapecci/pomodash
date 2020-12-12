@@ -1,7 +1,15 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import './variables.scss';
+@import './navbar.scss';
+@import './topProfile.scss';
+@import './card.scss';
 
 // Buttons
 .btn {
   transition: all 0.2s ease;
   border-radius: 0px;
+}
+
+ul {
+  list-style: none;
 }
