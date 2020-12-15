@@ -17,9 +17,9 @@ const Header = () => {
             {' '}
             <Nav.Link href='#home'>Home</Nav.Link>
           </Link>
-          <Link to='/app/profile'>
+          <Link to='/app/dashboard'>
             {' '}
-            <Nav.Link href='#link'>Profile</Nav.Link>
+            <Nav.Link href='#link'>Dashboard</Nav.Link>
           </Link>
         </Nav>
         <Link to='/app/login'>

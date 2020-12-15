@@ -5,13 +5,13 @@ import '../../styles/main.scss';
 import { Provider } from 'react-redux';
 import store from '../../store';
 
-import Header from '../Header';
+import Navbar from '../Navbar';
 
 const Layout = ({ children }) => (
   <Provider store={store}>
     <div>
-      <Helmet title='Pomo Points' />
-      <Header />
+      <Helmet title='Pomodash' />
+      <Navbar />
       <main>{children}</main>
     </div>
   </Provider>

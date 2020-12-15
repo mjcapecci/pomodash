@@ -32,7 +32,7 @@ const Index = () => (
         This is the public home, and here it is a private route to start:
         <br />
         <button>
-          <Link to='/app/profile'>Go to your profile</Link>
+          <Link to='/app/dashboard'>Go to your dashboard</Link>
         </button>
       </p>
     </View>

@@ -1,1 +1,2 @@
-export const TEST_TYPE = 'TEST_TYPE';
+export const SET_CURRENT_PROJECT = 'SET_CURRENT_PROJECT';
+export const SET_TIMER_ACTIVE = 'SET_TIMER_ACTIVE';

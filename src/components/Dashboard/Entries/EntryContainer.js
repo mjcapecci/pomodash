@@ -4,26 +4,27 @@ import { useCollectionOnce } from 'react-firebase-hooks/firestore';
 
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import ProjectItem from './ProjectItem';
+import EntryItem from './EntryItem';
 
-const ProjectsCard = () => {
+const EntryLog = () => {
   const uid = JSON.parse(localStorage.getItem('user')).uid;
   const [value, loading, error] = useCollectionOnce(
-    firebase.firestore().collection('Projects').where('user', '==', uid),
+    firebase.firestore().collection('Entries').where('user', '==', uid),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
+
   return (
     <Card>
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span>Collection: Loading...</span>}
       {value && (
         <>
-          <h4>Your Projects </h4>
+          <h4>Your Entries: </h4>
           <ListGroup variant='flush'>
             {value.docs.map((doc) => (
-              <ProjectItem key={doc.id} data={doc.data().name} />
+              <EntryItem key={doc.id} data={doc.data()} />
             ))}
           </ListGroup>
         </>
@@ -32,4 +33,4 @@ const ProjectsCard = () => {
   );
 };
 
-export default ProjectsCard;
+export default EntryLog;

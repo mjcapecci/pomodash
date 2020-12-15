@@ -1,0 +1,4 @@
+In this app, I am trying to implement react-firebase-hooks and the gatsby-plugin-firebase packages.
+This combination of packages has required a new line of thinking in terms of handling all HTTP / GQL requests in redux actions.
+As a result, there are components which can perform these requests, and others than cannot.
+Any component labeled as a "Container" will have access to make requests.
