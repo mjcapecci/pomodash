@@ -19,6 +19,12 @@
   grid-gap: 1rem;
 }
 
+@mixin badge-no-bg {
+  border-radius: 25px;
+  font-size: 12px;
+  padding: 0.3rem;
+}
+
 .centered-card {
   @include f-container-column;
 
