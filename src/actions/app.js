@@ -13,3 +13,8 @@ export const setTimerActive = (bool) => (dispatch) => {
     payload: bool,
   });
 };
+
+export const setCurrentDayEpoch = () => (dispatch) => {
+  // const date = new Date();
+  // console.log(date.now());
+};

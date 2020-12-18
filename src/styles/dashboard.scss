@@ -17,6 +17,7 @@
     .entry-row-item-time {
       width: 100%;
       @include f-container;
+      justify-content: left;
 
       .time-div {
         margin: 0 0.5rem;

@@ -13,7 +13,8 @@ const EntryLog = () => {
     firebase
       .firestore()
       .collection('Entries')
-      .where('user', '==', getUser().uid),
+      .where('user', '==', getUser().uid)
+      .orderBy('startTime', 'desc'),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
@@ -28,6 +29,12 @@ const EntryLog = () => {
     );
   }, [value]);
 
+  useEffect(() => {
+    if (error) {
+      console.log(error);
+    }
+  }, [error]);
+
   return (
     <Card>
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
@@ -36,6 +43,11 @@ const EntryLog = () => {
         <>
           <h4>Your Entries: </h4>
           <ListGroup variant='flush'>
+            <ListGroup.Item className='entry-row'>
+              <div className='entry-row-item entry-row-item-time'>Date</div>
+              <div className='entry-row-item'>Project</div>
+              <div className='entry-row-item'>Result</div>
+            </ListGroup.Item>
             {sortedData.map((doc) => (
               <EntryItem key={doc.id} data={doc.data()} />
             ))}
